@@ -55,7 +55,7 @@ class Ropa {
 class Tienda {
 
     private Map<Integer, Ropa> inventario;
-
+// se crea el cosntructor para inicialisar el Map.
     public Tienda() {
         this.inventario = new HashMap<>();
     }
@@ -63,7 +63,7 @@ class Tienda {
     public Ropa buscarId(Integer id) {
         return inventario.get(id);
     }
-
+// AGREGA AL MAP EL OBJETO DE Ropa y le coloca un key.
     public void agregarPrenda(Ropa ropa) {
         inventario.put(ropa.getId(), ropa);
     }
@@ -71,7 +71,7 @@ class Tienda {
     public void eliminarPrenda(Integer id) {
         inventario.remove(id);
     }
-
+// VER TODO LO DEL INVENTARIO
     public void todasPrendas() {
         for (var entrada : inventario.entrySet()) {
             Ropa prenda = entrada.getValue();
@@ -92,7 +92,7 @@ public class TiendaRopaMap {
 
         System.out.println("Prendas en la tienda:");
         tienda1.todasPrendas();
-
+// si al ejecturar el metodo buscarId de el objeto Tienda devuleve un null por que no encontro nada con ese id se hace una validacion con condicionales.
         Ropa prendaEncontrada = tienda1.buscarId(1);
         if (prendaEncontrada != null) {
             System.out.println("Prenda encontrada: " + prendaEncontrada.mostrarPrenda());
